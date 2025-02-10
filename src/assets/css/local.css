@@ -438,6 +438,7 @@
   #content-1450 .cs-title,
   #content-1450 .cs-text {
     max-width: 100%;
+    color: var(--headerColor);
   }
   #content-1450 .cs-text {
     /* 16px - 20px */
