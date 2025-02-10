@@ -32,6 +32,10 @@
   #meet-team-860 .cs-title {
     text-align: inherit;
     position: relative;
+    color: var(--headerColor);
+  }
+  #meet-team-860 .cs-text {
+    color: var(--bodyTextColor);
   }
   #meet-team-860 .cs-card-group {
     width: 100%;
@@ -259,9 +263,11 @@
     transform-origin: center;
     transition: opacity 0.5s, transform 0.3s;
   }
-  #faq-254 .cs-title,
   #faq-254 .cs-text {
     color: var(--bodyTextColor);
+  }
+  #faq-254 .cs-title {
+    color: var(--headerColor);
   }
   #faq-254 .cs-item-p {
     /* 14px - 16px */
@@ -374,7 +380,7 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     gap: 0.75rem;
     align-content: center;
   }
@@ -387,7 +393,7 @@
     display: flex;
     justify-content: center;
     /* push icon top the top so if the list item goes to two lines the icon stays at the top */
-    align-items: center;
+    align-items: start;
     gap: 0.5rem;
   }
   #list-1405 .cs-text {
@@ -408,6 +414,7 @@
 @media only screen and (min-width: 0rem) {
   #content-1450 {
     padding: var(--sectionPadding);
+    background-color: #fff;
   }
   #content-1450 .cs-container {
     width: 100%;

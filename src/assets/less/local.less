@@ -35,6 +35,11 @@
         .cs-title {
             text-align: inherit;
             position: relative;
+            color: var(--headerColor);
+        }
+
+        .cs-text {
+            color: var(--bodyTextColor);
         }
 
         .cs-card-group {
@@ -303,8 +308,12 @@
             }
         }
 
-        .cs-title, .cs-text{
+        .cs-text{
             color: var(--bodyTextColor);
+        }
+
+        .cs-title {
+            color: var(--headerColor);
         }
 
         .cs-item-p {
@@ -435,7 +444,7 @@
         padding: 0;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: start;
         gap: (12/16rem);
         align-content: center;
 
@@ -448,7 +457,7 @@
             display: flex;
             justify-content: center;
             /* push icon top the top so if the list item goes to two lines the icon stays at the top */
-            align-items: center;
+            align-items: start;
             gap: (8/16rem);
         }
 
@@ -474,6 +483,7 @@
 @media only screen and (min-width: 0rem) {
     #content-1450 {
         padding: var(--sectionPadding);
+        background-color: #fff;
         
         .cs-container {
             width: 100%;
