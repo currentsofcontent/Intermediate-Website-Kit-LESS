@@ -407,6 +407,44 @@
     }
 }
 
+@media only screen and (min-width: 0rem) {
+    #list-1405 {
+        width: 100%;
+        margin: 0 0 (24/16rem) 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: (12/16rem);
+        align-content: left;
+
+        .cs-li {
+            font-size: var(--bodyFontSize);
+            list-style: none;
+            line-height: 1.5em;
+            width: 100%;
+            color: var(--bodyTextColor);
+            display: flex;
+            justify-content: left;
+            /* push icon top the top so if the list item goes to two lines the icon stays at the top */
+            align-items: left;
+            gap: (8/16rem);
+        }
+
+        .cs-text {
+            text-align: center;
+        }
+
+        .cs-icon {
+            width: (24/16rem);
+            height: auto;
+            /* adds extra space between the icon and top of parent so it's more centered */
+            margin-top: 1px;
+            display: block;
+        }
+    }
+}
+
 /* Tablet - 768px */
 @media only screen and (min-width: 48em) {
     #faq-254 {
@@ -431,22 +469,21 @@
             max-width: (413/16rem);
             /* prevents flexbox from squishing it */
             flex: none;
-            background-color: #fff;
+            background-color: var(--primary);
         }
     }
 }
-/* Mobile - 360px */
-/* you can copy and paste these styles into the section CSS where you placed the #list-1405 HTML, or you can place it in your global stylesheet so you can reuse the HTML in any Side By Side section on your site. That way when you make changes to it, it will also change everywhere in the site */
-@media only screen and (min-width: 0rem) {
+
+@media only screen and (min-width: 48em) {
     #list-1405 {
         width: 100%;
         margin: 0 0 (24/16rem) 0;
         padding: 0;
         display: flex;
         flex-direction: column;
-        align-items: start;
+        align-items: center;
         gap: (12/16rem);
-        align-content: left;
+        align-content: center;
 
         .cs-li {
             font-size: var(--bodyFontSize);
@@ -455,9 +492,9 @@
             width: 100%;
             color: var(--bodyTextColor);
             display: flex;
-            justify-content: left;
+            justify-content: center;
             /* push icon top the top so if the list item goes to two lines the icon stays at the top */
-            align-items: left;
+            align-items: cen;
             gap: (8/16rem);
         }
 
