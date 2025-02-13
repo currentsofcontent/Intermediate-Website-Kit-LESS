@@ -168,33 +168,36 @@ eleventyNavigation:
           <!--Mobile Image-->
           <source media="(max-width: 600px)" srcset="{% getUrl
           "/assets/images/portrait_susi.jpeg" | resize({ width: 576 , height:
-          714 }) | avif %}" type="image/avif"> <source media="(max-width:
-          600px)" srcset="{% getUrl "/assets/images/portrait_susi.jpeg" |
-          resize({ width: 576 , height: 714 }) | webp %}" type="image/webp">
-          <source media="(max-width: 600px)" srcset="{% getUrl
+          714 }) | avif({ quality: 90 }) %}" type="image/avif"> <source
+          media="(max-width: 600px)" srcset="{% getUrl
           "/assets/images/portrait_susi.jpeg" | resize({ width: 576 , height:
-          714 }) | jpeg %}" type="image/jpeg">
+          714 }) | webp({ quality: 90 }) %}" type="image/webp"> <source
+          media="(max-width: 600px)" srcset="{% getUrl
+          "/assets/images/portrait_susi.jpeg" | resize({ width: 576 , height:
+          714 }) | jpeg({ quality: 90 }) %}" type="image/jpeg">
           <!--Tablet Image-->
           <source media="(max-width: 1024px)" srcset="{% getUrl
           "/assets/images/portrait_susi.jpeg" | resize({ width: 1100 , height:
-          814 }) | avif %}" type="image/avif"> <source media="(max-width:
-          1024px)" srcset="{% getUrl "/assets/images/portrait_susi.jpeg" |
-          resize({ width: 1100 , height: 814 }) | webp %}" type="image/webp">
-          <source media="(max-width: 1024px)" srcset="{% getUrl
+          814 }) | avif({ quality: 90 }) %}" type="image/avif"> <source
+          media="(max-width: 1024px)" srcset="{% getUrl
           "/assets/images/portrait_susi.jpeg" | resize({ width: 1100 , height:
-          814 }) | jpeg %}" type="image/jpeg">
+          814 }) | webp({ quality: 90 }) %}" type="image/webp"> <source
+          media="(max-width: 1024px)" srcset="{% getUrl
+          "/assets/images/portrait_susi.jpeg" | resize({ width: 1100 , height:
+          814 }) | jpeg({ quality: 90 }) %}" type="image/jpeg">
           <!--Desktop Image-->
           <source media="(min-width: 1024px)" srcset="{% getUrl
           "/assets/images/portrait_susi.jpeg" | resize({ width: 610 , height:
-          814 }) | avif %}" type="image/avif"> <source media="(min-width:
-          1024px)" srcset="{% getUrl "/assets/images/portrait_susi.jpeg" |
-          resize({ width: 610 , height: 814 }) | webp %}" type="image/webp">
-          <source media="(min-width: 1024px)" srcset="{% getUrl
+          814 }) | avif({ quality: 90 }) %}" type="image/avif"> <source
+          media="(min-width: 1024px)" srcset="{% getUrl
           "/assets/images/portrait_susi.jpeg" | resize({ width: 610 , height:
-          814 }) | jpeg %}" type="image/jpeg"> <img src="{% getUrl
+          814 }) | webp({ quality: 90 }) %}" type="image/webp"> <source
+          media="(min-width: 1024px)" srcset="{% getUrl
           "/assets/images/portrait_susi.jpeg" | resize({ width: 610 , height:
-          814 }) | jpeg %}" alt="portrait" width="610" height="814"
-          loading="lazy" decoding="async" aria-hidden="true">
+          814 }) | jpeg({ quality: 90 }) %}" type="image/jpeg"> <img src="{%
+          getUrl "/assets/images/portrait_susi.jpeg" | resize({ width: 610 ,
+          height: 814 }) | jpeg({ quality: 90 }) %}" alt="portrait" width="610"
+          height="814" loading="lazy" decoding="async" aria-hidden="true">
         </picture>
         <div class="cs-info">
           <span class="cs-name">Susanne Stenglein</span>
@@ -214,34 +217,37 @@ eleventyNavigation:
           <!--Mobile Image-->
           <source media="(max-width: 600px)" srcset="{% getUrl
           "/assets/images/portrait_kathrin.jpeg" | resize({ width: 576 , height:
-          714 }) | avif %}" type="image/avif"> <source media="(max-width:
-          600px)" srcset="{% getUrl "/assets/images/portrait_kathrin.jpeg" |
-          resize({ width: 576 , height: 714 }) | webp %}" type="image/webp">
-          <source media="(max-width: 600px)" srcset="{% getUrl
-          "/assets/images/portrait_kathrin.jpeg" | resize({ width: 576 , height:
-          714 }) | jpeg %}" type="image/jpeg">
+          714, fit: fill, position: center}) | avif({ quality: 90 }) %}"
+          type="image/avif"> <source media="(max-width: 600px)" srcset="{%
+          getUrl "/assets/images/portrait_kathrin.jpeg" | resize({ width: 576 ,
+          height: 714, fit: fill, position: center}) | webp({ quality: 90 }) %}"
+          type="image/webp"> <source media="(max-width: 600px)" srcset="{%
+          getUrl "/assets/images/portrait_kathrin.jpeg" | resize({ width: 576 ,
+          height: 714, fit: fill, position: center}) | jpeg({ quality: 90 }) %}"
+          type="image/jpeg">
           <!--Tablet Image-->
           <source media="(max-width: 1024px)" srcset="{% getUrl
           "/assets/images/portrait_kathrin.jpeg" | resize({ width: 1100 ,
-          height: 814 }) | avif %}" type="image/avif"> <source
+          height: 814 }) | avif({ quality: 90 }) %}" type="image/avif"> <source
           media="(max-width: 1024px)" srcset="{% getUrl
           "/assets/images/portrait_kathrin.jpeg" | resize({ width: 1100 ,
-          height: 814 }) | webp %}" type="image/webp"> <source
+          height: 814 }) | webp({ quality: 90 }) %}" type="image/webp"> <source
           media="(max-width: 1024px)" srcset="{% getUrl
           "/assets/images/portrait_kathrin.jpeg" | resize({ width: 1100 ,
-          height: 814 }) | jpeg %}" type="image/jpeg">
+          height: 814 }) | jpeg({ quality: 90 }) %}" type="image/jpeg">
           <!--Desktop Image-->
           <source media="(min-width: 1024px)" srcset="{% getUrl
           "/assets/images/portrait_kathrin.jpeg" | resize({ width: 610 , height:
-          814 }) | avif %}" type="image/avif"> <source media="(min-width:
-          1024px)" srcset="{% getUrl "/assets/images/portrait_kathrin.jpeg" |
-          resize({ width: 610 , height: 814 }) | webp %}" type="image/webp">
-          <source media="(min-width: 1024px)" srcset="{% getUrl
+          814 }) | avif({ quality: 90 }) %}" type="image/avif"> <source
+          media="(min-width: 1024px)" srcset="{% getUrl
           "/assets/images/portrait_kathrin.jpeg" | resize({ width: 610 , height:
-          814 }) | jpeg %}" type="image/jpeg"> <img src="{% getUrl
+          814 }) | webp({ quality: 90 }) %}" type="image/webp"> <source
+          media="(min-width: 1024px)" srcset="{% getUrl
           "/assets/images/portrait_kathrin.jpeg" | resize({ width: 610 , height:
-          814 }) | jpeg %}" alt="portrait" width="610" height="814"
-          loading="lazy" decoding="async" aria-hidden="true">
+          814 }) | jpeg({ quality: 90 }) %}" type="image/jpeg"> <img src="{%
+          getUrl "/assets/images/portrait_kathrin.jpeg" | resize({ width: 610 ,
+          height: 814 }) | jpeg({ quality: 90 }) %}" alt="portrait" width="610"
+          height="814" loading="lazy" decoding="async" aria-hidden="true">
         </picture>
         <div class="cs-info">
           <span class="cs-name">Kathrin Flörl-Korb</span>
