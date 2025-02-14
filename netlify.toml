@@ -6,11 +6,7 @@
   # Installs the Lighthouse Build Plugin for all deploy contexts
   package = "@netlify/plugin-lighthouse"
 
-<<<<<<< HEAD
   [[plugins]]
-=======
-[[plugins]]
->>>>>>> 239c9e23df4d9d8a7e17895e1d535c6939e3245a
 package = "netlify-plugin-cache"
 
   [plugins.inputs]
