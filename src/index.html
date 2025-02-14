@@ -1,1092 +1,388 @@
 ---
-title: "Soul Sanctuary | Dein Rückzugsort für Körper, Geist und Seele"
-description: "XXX"
-preloadImg: "/assets/images/landing.jpg"
-permalink: "/"
-tags: "sitemap" # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
+title: 'Pixel Perfect Websites | Code Stitch Web Designs | Denver, CO'
+description: 'Meta description for the page'
+preloadImg: '/assets/images/landing.jpg'
+permalink: '/'
+tags: 'sitemap' # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
 eleventyNavigation:
   key: Home
   order: 100
 ---
 
-{% extends "layouts/base.html" %} {% block head %}
-<link rel="stylesheet" href="/assets/css/local.css" />
-<link rel="stylesheet" href="/assets/css/critical.css" />
+{% extends "layouts/base.html" %}
 
-<!-- Script for Netlify Identity -->
-<script
-  defer
-  src="https://identity.netlify.com/v1/netlify-identity-widget.js"
-></script>
-<script defer>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", (user) => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/local.css"/>
+    <link rel="stylesheet" href="/assets/css/critical.css"/>
 
-<!-- JSON Schema Markup -->
-<script type="application/ld+json">
-  {
-      "@context": "http://schema.org",
-      "@type": "LocalBusiness",
-      "name": "{{ client.name }}",
-      {% if preloadImg %}"image": "{{ preloadImg }}",{% endif %}
-      {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
-      {% if client.email %}"email": "{{ client.email }}",{% endif %}
-      {% if client.address %}
-          "address": {
-              "@type": "PostalAddress"{% if client.address.lineOne %},
-                  "streetAddress": "{{ client.address.lineOne }}{% if client.address.lineTwo %}, {{ client.address.lineTwo }}{% endif %}"
-              {% endif %}
-              {% if client.address.city %},
-                  "addressLocality": "{{ client.address.city }}"
-              {% endif %}
-              {% if client.address.state %},
-                  "addressRegion": "{{ client.address.state }}"
-              {% endif %}
-              {% if client.address.zip %},
-                  "postalCode": "{{ client.address.zip }}"
-              {% endif %}
-              {% if client.address.country %},
-                  "addressCountry": "{{ client.address.country }}"
-              {% endif %}
-          },
-      {% endif %}
-      {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
-      {% if client.socials %}
-          "sameAs": [{% for platform, url in client.socials %}
-                  {% if not loop.first %},{% endif %}
-                  "{{ url }}"
-              {% endfor %}]
-      {% endif %}
-  }
-</script>
-{% endblock %} {% block body %}
+    <!-- Script for Netlify Identity -->
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script defer>
+        if (window.netlifyIdentity) {
+            window
+                .netlifyIdentity
+                .on('init', (user) => {
+                    if (!user) {
+                        window
+                            .netlifyIdentity
+                            .on('login', () => {
+                                document.location.href = '/admin/';
+                            });
+                    }
+                });
+        }
+    </script>
 
-<!-- ============================================ -->
-<!--                    Hero                      -->
-<!-- ============================================ -->
+    <!-- JSON Schema Markup -->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "LocalBusiness",
+            "name": "{{ client.name }}",
+            {% if preloadImg %}"image": "{{ preloadImg }}",{% endif %}
+            {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
+            {% if client.email %}"email": "{{ client.email }}",{% endif %}
+            {% if client.address %}
+                "address": {
+                    "@type": "PostalAddress"{% if client.address.lineOne %},
+                        "streetAddress": "{{ client.address.lineOne }}{% if client.address.lineTwo %}, {{ client.address.lineTwo }}{% endif %}"
+                    {% endif %}
+                    {% if client.address.city %},
+                        "addressLocality": "{{ client.address.city }}"
+                    {% endif %}
+                    {% if client.address.state %},
+                        "addressRegion": "{{ client.address.state }}"
+                    {% endif %}
+                    {% if client.address.zip %},
+                        "postalCode": "{{ client.address.zip }}"
+                    {% endif %}
+                    {% if client.address.country %},
+                        "addressCountry": "{{ client.address.country }}"
+                    {% endif %}
+                },
+            {% endif %}
+            {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
+            {% if client.socials %}
+                "sameAs": [{% for platform, url in client.socials %}
+                        {% if not loop.first %},{% endif %}
+                        "{{ url }}"
+                    {% endfor %}]
+            {% endif %}
+        }
+    </script>
+{% endblock %}
 
-<section id="hero-227">
-  <div class="cs-container">
-    <div class="cs-flex-group">
-      <span class="cs-topper"
-        >Dein Rückzugsort für Körper, Geist und Seele.</span
-      >
-      <h1 class="cs-title">Willkommen bei Soul Sanctuary</h1>
-      <p class="cs-text">
-        Manchmal braucht es einen Ort, an dem wir einfach sein können – ohne
-        Ablenkung, ohne Hektik. Soul Sanctuary ist genau dieser Ort. Hier
-        findest du Yoga, Meditation und Breathwork, um Körper, Geist und Seele
-        in Einklang zu bringen. Egal, ob du Entspannung suchst oder Kraft
-        aufbauen möchtest – wir begleiten dich auf deinem Weg. Komm vorbei, atme
-        tief durch und finde deine Mitte.
-      </p>
-      <a href="#über-uns" class="cs-button-solid">Entdecke unser Studio</a>
-      <a href="#stundenplan" class="cs-button-solid">
-        <img
-          class="cs-img"
-          decoding="async"
-          src="https://csimg.nyc3.digitaloceanspaces.com/Hero/play.svg"
-          alt="play icon"
-          width="17"
-          height="17"
-          aria-hidden="true"
-        />
-        Zum Stundenplan
-      </a>
-    </div>
-    <!--Service Cards-->
-    <ul class="cs-card-group">
-      <li class="cs-item">
-        <a class="cs-link" href="#stundenplan">
-          <span class="cs-number">01</span>
-          <h2 class="cs-h2">Yoga</h2>
-          <p class="cs-item-text">
-            Fließende Bewegungen, bewusstes Atmen, achtsames Spüren. Unsere
-            Yoga-Stunden helfen dir, Kraft und Flexibilität zu finden –
-            körperlich und mental.
-          </p>
-        </a>
-      </li>
-      <li class="cs-item">
-        <a class="cs-link" href="#stundenplan">
-          <span class="cs-number">02</span>
-          <h2 class="cs-h2">Meditation</h2>
-          <p class="cs-item-text">
-            In der Stille liegt die Kraft. Unsere Meditationen geben dir Raum,
-            den Alltag loszulassen, deinen Geist zu klären und bei dir
-            anzukommen.
-          </p>
-        </a>
-      </li>
-      <li class="cs-item">
-        <a class="cs-link" href="#stundenplan">
-          <span class="cs-number">03</span>
-          <h2 class="cs-h2">Breathwork</h2>
-          <p class="cs-item-text">
-            Der Atem ist die Brücke zwischen Körper und Geist. Durch gezielte
-            Atemtechniken kannst du Stress lösen, neue Energie tanken und innere
-            Balance finden.
-          </p>
-        </a>
-      </li>
-    </ul>
-  </div>
+{% block body %}
 
-  <!-- Background Image -->
-  <picture class="cs-picture">
-    <!--Mobile Image-->
-    <source media="(max-width: 600px)" srcset="{% getUrl
-    "/assets/images/yoga-2.jpg" | resize({ width: 640 , height: 2640 }) | avif
-    %}" type="image/avif"> <source media="(max-width: 600px)" srcset="{% getUrl
-    "/assets/images/yoga-2.jpg" | resize({ width: 640 , height: 2640 }) | webp
-    %}" type="image/webp"> <source media="(max-width: 600px)" srcset="{% getUrl
-    "/assets/images/yoga-2.jpg" | resize({ width: 640 , height: 2640 }) | jpeg
-    %}" type="image/jpeg">
-    <!--Tablet Image-->
-    <source media="(max-width: 1024px)" srcset="{% getUrl
-    "/assets/images/yoga-2.jpg" | resize({ width: 2046 , height: 2362 }) | avif
-    %}" type="image/avif"> <source media="(max-width: 1024px)" srcset="{% getUrl
-    "/assets/images/yoga-2.jpg" | resize({ width: 2046 , height: 2362 }) | webp
-    %}" type="image/webp"> <source media="(max-width: 1024px)" srcset="{% getUrl
-    "/assets/images/yoga-2.jpg" | resize({ width: 2046 , height: 2362 }) | jpeg
-    %}" type="image/jpeg">
-    <!--Desktop Image-->
-    <source media="(min-width: 1024px)" srcset="{% getUrl
-    "/assets/images/yoga-2.jpg" | resize({ width: 2880 , height: 2642 }) | avif
-    %}" type="image/avif"> <source media="(min-width: 1024px)" srcset="{% getUrl
-    "/assets/images/yoga-2.jpg" | resize({ width: 2880 , height: 2642 }) | webp
-    %}" type="image/webp"> <source media="(min-width: 1024px)" srcset="{% getUrl
-    "/assets/images/yoga-2.jpg" | resize({ width: 2880 , height: 2642 }) | jpeg
-    %}" type="image/jpeg"> <img src="{% getUrl "/assets/images/yoga-2.jpg" |
-    resize({ width: 2880 , height: 2642 }) | jpeg %}" alt="Yogastudio"
-    width="2880" height="2642" loading="lazy" decoding="async"
-    aria-hidden="true">
-  </picture>
-</section>
+    <!-- ============================================ -->
+    <!--                    Hero                      -->
+    <!-- ============================================ -->
 
-<!-- ============================================ -->
-<!--                Side By Side                  -->
-<!-- ============================================ -->
-
-<section id="sbs-1073">
-  <div class="cs-container" id="über-uns">
-    <div class="cs-image-group">
-      <!--Top left image-->
-      <picture class="cs-picture cs-picture1">
-        <!--Mobile Image-->
-        <source media="(max-width: 600px)" srcset="{% getUrl
-        "/assets/images/yoga-3.jpg" | resize({ width: 180 , height: 344 }) |
-        avif %}" type="image/avif"> <source media="(max-width: 600px)"
-        srcset="{% getUrl "/assets/images/yoga-3.jpg" | resize({ width: 180 ,
-        height: 344 }) | webp %}" type="image/webp"> <source media="(max-width:
-        600px)" srcset="{% getUrl "/assets/images/yoga-3.jpg" | resize({ width:
-        180 , height: 344 }) | jpeg %}" type="image/jpeg">
-        <!--Tablet Image-->
-        <source media="(max-width: 1024px)" srcset="{% getUrl
-        "/assets/images/yoga-3.jpg" | resize({ width: 320 , height: 660 }) |
-        avif %}" type="image/avif"> <source media="(max-width: 1024px)"
-        srcset="{% getUrl "/assets/images/yoga-3.jpg" | resize({ width: 320 ,
-        height: 660 }) | webp %}" type="image/webp"> <source media="(max-width:
-        1024px)" srcset="{% getUrl "/assets/images/yoga-3.jpg" | resize({ width:
-        320 , height: 660 }) | jpeg %}" type="image/jpeg">
-        <!--Desktop Image-->
-        <source media="(min-width: 1024px)" srcset="{% getUrl
-        "/assets/images/yoga-3.jpg" | resize({ width: 426 , height: 860 }) |
-        avif %}" type="image/avif"> <source media="(min-width: 1024px)"
-        srcset="{% getUrl "/assets/images/yoga-3.jpg" | resize({ width: 426 ,
-        height: 860 }) | webp %}" type="image/webp"> <source media="(min-width:
-        1024px)" srcset="{% getUrl "/assets/images/yoga-3.jpg" | resize({ width:
-        426 , height: 860 }) | jpeg %}" type="image/jpeg"> <img src="{% getUrl
-        "/assets/images/yoga-3.jpg" | resize({ width: 426 , height: 860 }) |
-        jpeg %}" alt="" width="426" height="860" loading="lazy" decoding="async"
-        aria-hidden="true">
-      </picture>
-      <!--Middle image-->
-      <picture class="cs-picture cs-picture2">
-        <!--Mobile Image-->
-        <source media="(max-width: 600px)" srcset="{% getUrl
-        "/assets/images/yoga-5.jpg" | resize({ width: 240 , height: 470 }) |
-        avif %}" type="image/avif"> <source media="(max-width: 600px)"
-        srcset="{% getUrl "/assets/images/yoga-5.jpg" | resize({ width: 240 ,
-        height: 470 }) | webp %}" type="image/webp"> <source media="(max-width:
-        600px)" srcset="{% getUrl "/assets/images/yoga-5.jpg" | resize({ width:
-        240 , height: 470 }) | jpeg %}" type="image/jpeg">
-        <!--Tablet Image-->
-        <source media="(max-width: 1024px)" srcset="{% getUrl
-        "/assets/images/yoga-5.jpg" | resize({ width: 460 , height: 900 }) |
-        avif %}" type="image/avif"> <source media="(max-width: 1024px)"
-        srcset="{% getUrl "/assets/images/yoga-5.jpg" | resize({ width: 460 ,
-        height: 900 }) | webp %}" type="image/webp"> <source media="(max-width:
-        1024px)" srcset="{% getUrl "/assets/images/yoga-5.jpg" | resize({ width:
-        460 , height: 900 }) | jpeg %}" type="image/jpeg">
-        <!--Desktop Image-->
-        <source media="(min-width: 1024px)" srcset="{% getUrl
-        "/assets/images/yoga-5.jpg" | resize({ width: 614 , height: 1200 }) |
-        avif %}" type="image/avif"> <source media="(min-width: 1024px)"
-        srcset="{% getUrl "/assets/images/yoga-5.jpg" | resize({ width: 614 ,
-        height: 1200 }) | webp %}" type="image/webp"> <source media="(min-width:
-        1024px)" srcset="{% getUrl "/assets/images/yoga-5.jpg" | resize({ width:
-        614 , height: 1200 }) | jpeg %}" type="image/jpeg"> <img src="{% getUrl
-        "/assets/images/yoga-5.jpg" | resize({ width: 614 , height: 1200 }) |
-        jpeg %}" alt="yoga-2" width="614" height="1200" loading="lazy"
-        decoding="async" aria-hidden="true">
-      </picture>
-      <!--Bottom right image-->
-      <picture class="cs-picture cs-picture3">
-        <!--Mobile Image-->
-        <source media="(max-width: 600px)" srcset="{% getUrl
-        "/assets/images/yoga-6.jpg" | resize({ width: 180 , height: 344 }) |
-        avif %}" type="image/avif"> <source media="(max-width: 600px)"
-        srcset="{% getUrl "/assets/images/yoga-6.jpg" | resize({ width: 180 ,
-        height: 344 }) | webp %}" type="image/webp"> <source media="(max-width:
-        600px)" srcset="{% getUrl "/assets/images/yoga-6.jpg" | resize({ width:
-        180 , height: 344 }) | jpeg %}" type="image/jpeg">
-        <!--Tablet Image-->
-        <source media="(max-width: 1024px)" srcset="{% getUrl
-        "/assets/images/yoga-6.jpg" | resize({ width: 320 , height: 660 }) |
-        avif %}" type="image/avif"> <source media="(max-width: 1024px)"
-        srcset="{% getUrl "/assets/images/yoga-6.jpg" | resize({ width: 320 ,
-        height: 660 }) | webp %}" type="image/webp"> <source media="(max-width:
-        1024px)" srcset="{% getUrl "/assets/images/yoga-6.jpg" | resize({ width:
-        320 , height: 660 }) | jpeg %}" type="image/jpeg">
-        <!--Desktop Image-->
-        <source media="(min-width: 1024px)" srcset="{% getUrl
-        "/assets/images/yoga-6.jpg" | resize({ width: 426 , height: 860 }) |
-        avif %}" type="image/avif"> <source media="(min-width: 1024px)"
-        srcset="{% getUrl "/assets/images/yoga-6.jpg" | resize({ width: 426 ,
-        height: 860 }) | webp %}" type="image/webp"> <source media="(min-width:
-        1024px)" srcset="{% getUrl "/assets/images/yoga-6.jpg" | resize({ width:
-        426 , height: 860 }) | jpeg %}" type="image/jpeg"> <img src="{% getUrl
-        "/assets/images/yoga-6.jpg" | resize({ width: 426 , height: 860 }) |
-        jpeg %}" alt="" width="426" height="860" loading="lazy" decoding="async"
-        aria-hidden="true">
-      </picture>
-    </div>
-    <div class="cs-content">
-      <span class="cs-topper">Unser Studio</span>
-      <h2 class="cs-title">Dein Rückzugsort für Körper, Geist und Seele</h2>
-      <p class="cs-text">
-        Willkommen in deiner Oase der Ruhe. Unser Studio ist ein Ort der
-        Geborgenheit, der dich einlädt, tief durchzuatmen und in deine Praxis
-        einzutauchen. Mit warmem Licht, natürlichen Materialien und einer
-        liebevollen Atmosphäre schaffen wir einen Raum, in dem du dich
-        wohlfühlst.
-      </p>
-      <ul class="cs-list">
-        <li class="cs-li">
-          Vielfältige Kurse – Egal, ob du sanfte Entspannung oder kraftvolle
-          Bewegung suchst, wir haben den passenden Kurs für dich.
-        </li>
-        <li class="cs-li">
-          Erfahrene Lehrer:innen – Unser Team begleitet dich mit Wissen, Herz
-          und einer tiefen Liebe zu Yoga & Achtsamkeit.
-        </li>
-        <li class="cs-li">
-          Wohlfühl-Atmosphäre – Ein Studio, das sich anfühlt wie dein zweites
-          Zuhause.
-        </li>
-        <li class="cs-li">
-          Für alle Level – Egal, ob Anfänger:in oder Fortgeschrittene:r – du
-          bist willkommen!
-        </li>
-        <li class="cs-li">
-          Mehr als Bewegung – Yoga ist für uns ein Weg zu mehr Leichtigkeit,
-          Klarheit und innerer Stärke.
-        </li>
-      </ul>
-      <a class="cs-link" href="tel:">
-        <picture class="cs-wrapper">
-          <img
-            class="cs-icon"
-            loading="lazy"
-            decoding="async"
-            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/white-phone.svg"
-            alt="icon"
-            width="24"
-            height="24"
-          />
-        </picture>
-        <div class="cs-info">
-          <span class="cs-header">Wir sind für dich da</span>
-          <span class="cs-link-content">123456789</span>
+    <section id="hero">
+        <div class="cs-container">
+            <div class="cs-flex-group">
+                <span class="cs-topper">mountain hiking society</span>
+                <h1 class="cs-title">Explore the World with Exciting People</h1>
+                <p class="cs-text">
+                    Tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius. Nibh tortor id aliquet lectus proin nibh condimentum.
+                </p>
+                <a href="/about" class="cs-button-solid">Explore More</a>
+                <a href="/contact" class="cs-button-transparent">
+                    <img
+                    class="cs-img"
+                    loading="lazy"
+                    decoding="async"
+                    src="https://csimg.nyc3.digitaloceanspaces.com/Hero/play.svg"
+                    alt="play icon"
+                    width="17"
+                    height="17"/>
+                    Get in Touch
+                </a>
+            </div>
         </div>
-      </a>
-    </div>
-  </div>
-</section>
 
-<!-- ============================================ -->
-<!--                    Stats                     -->
-<!-- ============================================ -->
-
-<section id="stats-888">
-  <div class="cs-container">
-    <div class="cs-content">
-      <span class="cs-topper">Zahlen & Fakten</span>
-      <h2 class="cs-title">Soul Sanctuary in Zahlen</h2>
-      <p class="cs-text">
-        Hinter jeder Zahl steckt eine Geschichte – von Menschen, die hier ihre
-        innere Balance gefunden haben, von Momenten der Ruhe und von der
-        gemeinsamen Energie, die unseren Raum erfüllt. Seit 2018 haben wir einen
-        Ort geschaffen, an dem Achtsamkeit, Bewegung und bewusster Atem
-        zusammenkommen. Mit wöchentlich 24 Kursen bieten wir dir die
-        Möglichkeit, deine Praxis so zu gestalten, wie es sich für dich richtig
-        anfühlt – egal, ob du nach Entspannung suchst oder neue Kraft tanken
-        möchtest.
-      </p>
-      <p class="cs-text">
-        Über 300 Mitglieder haben sich bereits auf die Reise zu mehr
-        Wohlbefinden gemacht und sind Teil unserer Community geworden. Unsere
-        Lehrer:innen begleiten dich mit Herz und Erfahrung, damit du das Beste
-        aus deiner Zeit bei uns herausholen kannst. Und weil wir immer weiter
-        wachsen, freuen wir uns darauf, auch dich bald in unserem Studio
-        willkommen zu heißen.
-      </p>
-      <a href="#stundenplan" class="cs-button-solid"
-        >Buche hier deine Yogastunde</a
-      >
-    </div>
-    <ul class="cs-card-group">
-      <li class="cs-item">
-        <span class="cs-number">Seit 2018</span>
-        <span class="cs-desc"
-          >für dich da – Ein Ort für Yoga, Meditation und achtsames Atmen.</span
-        >
-      </li>
-      <li class="cs-item">
-        <span class="cs-number">24</span>
-        <span class="cs-desc"
-          >Kurse pro Woche – Finde deinen perfekten Flow.</span
-        >
-      </li>
-      <li class="cs-item">
-        <span class="cs-number">300+</span>
-        <span class="cs-desc"
-          >zufriedene Mitglieder – Menschen, die regelmäßig mit uns
-          praktizieren.</span
-        >
-      </li>
-      <li class="cs-item">
-        <span class="cs-number">100% </span>
-        <span class="cs-desc"
-          >Herz & Achtsamkeit – Unser Versprechen für dich.</span
-        >
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- ============================================ -->
-<!--                   Timetable                  -->
-<!-- ============================================ -->
-
-<section id="timetable-1731">
-  <div class="cs-container" id="stundenplan">
-    <div class="cs-content">
-      <div class="cs-flex-group">
-        <span class="cs-topper">Unser Stundenplan</span>
-        <h2 class="cs-title">Dein Rhythmus, dein Flow</h2>
-      </div>
-    </div>
-    <div class="cs-table-list">
-      <table class="cs-table">
-        <thead>
-          <tr>
-            <th scope="col" colspan="2">Montag</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Vinyasa Flow</th>
-            <td>8:00 - 9:00</td>
-          </tr>
-          <tr>
-            <th scope="row">Power Yoga</th>
-            <td>10:00 - 11:00</td>
-          </tr>
-          <tr>
-            <th scope="row">Cardio Burn</th>
-            <td>17:00 - 18:00</td>
-          </tr>
-          <tr>
-            <th scope="row">Pranayama</th>
-            <td>18:30 - 19:30</td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="cs-table">
-        <thead>
-          <tr>
-            <th scope="col" colspan="2">Dienstag</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Early Bird Yoga</th>
-            <td>6:00 - 7:00</td>
-          </tr>
-          <tr>
-            <th scope="row">Power Yoga</th>
-            <td>10:00 - 11:00</td>
-          </tr>
-          <tr>
-            <th scope="row">Hatha Yoga</th>
-            <td>18:00 - 19:00</td>
-          </tr>
-          <tr>
-            <th scope="row">Yoga Nidra</th>
-            <td>19:00 - 20:30</td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="cs-table">
-        <thead>
-          <tr>
-            <th scope="col" colspan="2">Mittwoch</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Pilates</th>
-            <td>8:00 - 9:00</td>
-          </tr>
-          <tr>
-            <th scope="row">Power Yoga</th>
-            <td>10:00 - 11:00</td>
-          </tr>
-          <tr>
-            <th scope="row">Lunch Special</th>
-            <td>12:00 - 12:45</td>
-          </tr>
-          <tr>
-            <th scope="row">Meditation</th>
-            <td>18:00 - 19:00</td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="cs-table">
-        <thead>
-          <tr>
-            <th scope="col" colspan="2">Donnerstag</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Vinyasa Flow</th>
-            <td>8:00 - 9:00</td>
-          </tr>
-          <tr>
-            <th scope="row">Power Yoga</th>
-            <td>10:00 - 11:00</td>
-          </tr>
-          <tr>
-            <th scope="row">Cardio Burn</th>
-            <td>17:00 - 18:00</td>
-          </tr>
-          <tr>
-            <th scope="row">Pranayama</th>
-            <td>18:30 - 19:30</td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="cs-table">
-        <thead>
-          <tr>
-            <th scope="col" colspan="2">Freitag</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Hatha Yoga</th>
-            <td>8:00 - 9:00</td>
-          </tr>
-          <tr>
-            <th scope="row">Power Yoga</th>
-            <td>10:00 - 11:00</td>
-          </tr>
-          <tr>
-            <th scope="row">Cardio Burn</th>
-            <td>18:00 - 19:00</td>
-          </tr>
-          <tr>
-            <th scope="row">Yoga Nidra</th>
-            <td>19:00 - 20:00</td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="cs-table">
-        <thead>
-          <tr>
-            <th scope="col" colspan="2">Samstag</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Pilates</th>
-            <td>8:00 - 9:00</td>
-          </tr>
-          <tr>
-            <th scope="row">Power Yoga</th>
-            <td>9:00 - 10:00</td>
-          </tr>
-          <tr>
-            <th scope="row">Vinyasa Flow</th>
-            <td>10:00 - 11:00</td>
-          </tr>
-          <tr>
-            <th scope="row">Weekend Special</th>
-            <td>18:00 - 19:00</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================ -->
-<!--                Meet The Team                 -->
-<!-- ============================================ -->
-
-<section id="meet-team-1332">
-  <div class="cs-container" id="unser-team">
-    <div class="cs-content">
-      <span class="cs-topper"
-        >Menschen, die dich auf deiner Reise begleiten</span
-      >
-      <h2 class="cs-title">Unser Team</h2>
-      <p class="cs-text">
-        Hinter Soul Sanctuary steht ein Team aus erfahrenen Lehrer:innen, die
-        mit Leidenschaft unterrichten und dich auf deinem Weg unterstützen:
-      </p>
-    </div>
-    <ul class="cs-card-group">
-      <li class="cs-item">
+        <!-- Background Image -->
         <picture class="cs-picture">
-          <!--Mobile Image-->
-          <source media="(max-width: 600px)" srcset="{% getUrl
-          "/assets/images/yoga-7.jpg" | resize({ width: 580 , height: 640 }) |
-          avif %}" type="image/avif"> <source media="(max-width: 600px)"
-          srcset="{% getUrl "/assets/images/yoga-7.jpg" | resize({ width: 580 ,
-          height: 640 }) | webp %}" type="image/webp"> <source
-          media="(max-width: 600px)" srcset="{% getUrl
-          "/assets/images/yoga-7.jpg" | resize({ width: 580 , height: 640 }) |
-          jpeg %}" type="image/jpeg">
-          <!--Tablet Image-->
-          <source media="(max-width: 1024px)" srcset="{% getUrl
-          "/assets/images/yoga-7.jpg" | resize({ width: 628 , height: 824 }) |
-          avif %}" type="image/avif"> <source media="(max-width: 1024px)"
-          srcset="{% getUrl "/assets/images/yoga-7.jpg" | resize({ width: 628 ,
-          height: 824 }) | webp %}" type="image/webp"> <source
-          media="(max-width: 1024px)" srcset="{% getUrl
-          "/assets/images/yoga-7.jpg" | resize({ width: 628 , height: 824 }) |
-          jpeg %}" type="image/jpeg">
-          <!--Desktop Image-->
-          <source media="(min-width: 1024px)" srcset="{% getUrl
-          "/assets/images/yoga-7.jpg" | resize({ width: 530 , height: 824 }) |
-          avif %}" type="image/avif"> <source media="(min-width: 1024px)"
-          srcset="{% getUrl "/assets/images/yoga-7.jpg" | resize({ width: 530 ,
-          height: 824 }) | webp %}" type="image/webp"> <source
-          media="(min-width: 1024px)" srcset="{% getUrl
-          "/assets/images/yoga-7.jpg" | resize({ width: 530 , height: 824 }) |
-          jpeg %}" type="image/jpeg"> <img src="{% getUrl
-          "/assets/images/yoga-7.jpg" | resize({ width: 530 , height: 824 }) |
-          jpeg %}" alt="yoga-4" width="530" height="824" loading="lazy"
-          decoding="async" aria-hidden="true">
+            <source media="(max-width: 600px)" srcset="/assets/images/landing-m.webp">
+            <source media="(min-width: 601px)" srcset="/assets/images/landing.jpg">
+            <img aria-hidden="true" decoding="async" src="/assets/images/landing.jpg" alt="new home" width="2500" height="1667" loading="eager">
         </picture>
-        <div class="cs-info">
-          <span class="cs-name">Tobias</span>
-          <span class="cs-job">Power Yoga & Pranayama</span>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                  Services                    -->
+    <!-- ============================================ -->
+
+    <section id="services" class="services">
+        <!-- Get Icons From flaticon.com -->
+        <div class="card">
+            <picture>
+                <img
+                aria-hidden="true"
+                decoding="async"
+                src="/assets/svgs/service1.svg"
+                alt="appliance"
+                width="48"
+                height="48"/>
+            </picture>
+            <h2>Service 1</h2>
+            <p>Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences.</p>
         </div>
-      </li>
-      <li class="cs-item">
-        <picture class="cs-picture">
-          <!--Mobile Image-->
-          <source media="(max-width: 600px)" srcset="{% getUrl
-          "/assets/images/yoga-8.jpg" | resize({ width: 580 , height: 640 }) |
-          avif %}" type="image/avif"> <source media="(max-width: 600px)"
-          srcset="{% getUrl "/assets/images/yoga-8.jpg" | resize({ width: 580 ,
-          height: 640 }) | webp %}" type="image/webp"> <source
-          media="(max-width: 600px)" srcset="{% getUrl
-          "/assets/images/yoga-8.jpg" | resize({ width: 580 , height: 640 }) |
-          jpeg %}" type="image/jpeg">
-          <!--Tablet Image-->
-          <source media="(max-width: 1024px)" srcset="{% getUrl
-          "/assets/images/yoga-8.jpg" | resize({ width: 628 , height: 824 }) |
-          avif %}" type="image/avif"> <source media="(max-width: 1024px)"
-          srcset="{% getUrl "/assets/images/yoga-8.jpg" | resize({ width: 628 ,
-          height: 824 }) | webp %}" type="image/webp"> <source
-          media="(max-width: 1024px)" srcset="{% getUrl
-          "/assets/images/yoga-8.jpg" | resize({ width: 628 , height: 824 }) |
-          jpeg %}" type="image/jpeg">
-          <!--Desktop Image-->
-          <source media="(min-width: 1024px)" srcset="{% getUrl
-          "/assets/images/yoga-8.jpg" | resize({ width: 530 , height: 824 }) |
-          avif %}" type="image/avif"> <source media="(min-width: 1024px)"
-          srcset="{% getUrl "/assets/images/yoga-8.jpg" | resize({ width: 530 ,
-          height: 824 }) | webp %}" type="image/webp"> <source
-          media="(min-width: 1024px)" srcset="{% getUrl
-          "/assets/images/yoga-8.jpg" | resize({ width: 530 , height: 824 }) |
-          jpeg %}" type="image/jpeg"> <img src="{% getUrl
-          "/assets/images/yoga-8.jpg" | resize({ width: 530 , height: 824 }) |
-          jpeg %}" alt="yoga-4" width="530" height="824" loading="lazy"
-          decoding="async" aria-hidden="true">
-        </picture>
-        <div class="cs-info">
-          <span class="cs-name">Sarah</span>
-          <span class="cs-job">Vinyasa & Yin Yoga</span>
+        <div class="card">
+            <picture>
+                <img
+                aria-hidden="true"
+                decoding="async"
+                src="/assets/svgs/service2.svg"
+                alt="appliance"
+                width="48"
+                height="48"/>
+            </picture>
+            <h2>Service 2</h2>
+            <p>Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences.</p>
         </div>
-      </li>
-      <li class="cs-item">
-        <picture class="cs-picture">
-          <!--Mobile Image-->
-          <source media="(max-width: 600px)" srcset="{% getUrl
-          "/assets/images/yoga-9.jpg" | resize({ width: 580 , height: 640 }) |
-          avif %}" type="image/avif"> <source media="(max-width: 600px)"
-          srcset="{% getUrl "/assets/images/yoga-9.jpg" | resize({ width: 580 ,
-          height: 640 }) | webp %}" type="image/webp"> <source
-          media="(max-width: 600px)" srcset="{% getUrl
-          "/assets/images/yoga-9.jpg" | resize({ width: 580 , height: 640 }) |
-          jpeg %}" type="image/jpeg">
-          <!--Tablet Image-->
-          <source media="(max-width: 1024px)" srcset="{% getUrl
-          "/assets/images/yoga-9.jpg" | resize({ width: 628 , height: 824 }) |
-          avif %}" type="image/avif"> <source media="(max-width: 1024px)"
-          srcset="{% getUrl "/assets/images/yoga-9.jpg" | resize({ width: 628 ,
-          height: 824 }) | webp %}" type="image/webp"> <source
-          media="(max-width: 1024px)" srcset="{% getUrl
-          "/assets/images/yoga-9.jpg" | resize({ width: 628 , height: 824 }) |
-          jpeg %}" type="image/jpeg">
-          <!--Desktop Image-->
-          <source media="(min-width: 1024px)" srcset="{% getUrl
-          "/assets/images/yoga-9.jpg" | resize({ width: 530 , height: 824 }) |
-          avif %}" type="image/avif"> <source media="(min-width: 1024px)"
-          srcset="{% getUrl "/assets/images/yoga-9.jpg" | resize({ width: 530 ,
-          height: 824 }) | webp %}" type="image/webp"> <source
-          media="(min-width: 1024px)" srcset="{% getUrl
-          "/assets/images/yoga-9.jpg" | resize({ width: 530 , height: 824 }) |
-          jpeg %}" type="image/jpeg"> <img src="{% getUrl
-          "/assets/images/yoga-9.jpg" | resize({ width: 530 , height: 824 }) |
-          jpeg %}" alt="yoga-4" width="530" height="824" loading="lazy"
-          decoding="async" aria-hidden="true">
-        </picture>
-        <div class="cs-info">
-          <span class="cs-name">Julia</span>
-          <span class="cs-job">Meditation & Achtsamkeit</span>
+        <div class="card">
+            <picture>
+                <img
+                aria-hidden="true"
+                decoding="async"
+                src="/assets/svgs/service3.svg"
+                alt="appliance"
+                width="48"
+                height="48"/>
+            </picture>
+            <h2>Service 3</h2>
+            <p>Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences.</p>
         </div>
-      </li>
-      <li class="cs-item">
-        <picture class="cs-picture">
-          <!--Mobile Image-->
-          <source media="(max-width: 600px)" srcset="{% getUrl
-          "/assets/images/yoga-10.jpg" | resize({ width: 580 , height: 640 }) |
-          avif %}" type="image/avif"> <source media="(max-width: 600px)"
-          srcset="{% getUrl "/assets/images/yoga-10.jpg" | resize({ width: 580 ,
-          height: 640 }) | webp %}" type="image/webp"> <source
-          media="(max-width: 600px)" srcset="{% getUrl
-          "/assets/images/yoga-10.jpg" | resize({ width: 580 , height: 640 }) |
-          jpeg %}" type="image/jpeg">
-          <!--Tablet Image-->
-          <source media="(max-width: 1024px)" srcset="{% getUrl
-          "/assets/images/yoga-10.jpg" | resize({ width: 628 , height: 824 }) |
-          avif %}" type="image/avif"> <source media="(max-width: 1024px)"
-          srcset="{% getUrl "/assets/images/yoga-10.jpg" | resize({ width: 628 ,
-          height: 824 }) | webp %}" type="image/webp"> <source
-          media="(max-width: 1024px)" srcset="{% getUrl
-          "/assets/images/yoga-10.jpg" | resize({ width: 628 , height: 824 }) |
-          jpeg %}" type="image/jpeg">
-          <!--Desktop Image-->
-          <source media="(min-width: 1024px)" srcset="{% getUrl
-          "/assets/images/yoga-10.jpg" | resize({ width: 530 , height: 824 }) |
-          avif %}" type="image/avif"> <source media="(min-width: 1024px)"
-          srcset="{% getUrl "/assets/images/yoga-10.jpg" | resize({ width: 530 ,
-          height: 824 }) | webp %}" type="image/webp"> <source
-          media="(min-width: 1024px)" srcset="{% getUrl
-          "/assets/images/yoga-10.jpg" | resize({ width: 530 , height: 824 }) |
-          jpeg %}" type="image/jpeg"> <img src="{% getUrl
-          "/assets/images/yoga-10.jpg" | resize({ width: 530 , height: 824 }) |
-          jpeg %}" alt="yoga-4" width="530" height="824" loading="lazy"
-          decoding="async" aria-hidden="true">
-        </picture>
-        <div class="cs-info">
-          <span class="cs-name">Miriam</span>
-          <span class="cs-job">Pilates & Power Yoga</span>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 Side By Side                 -->
+    <!-- ============================================ -->
+
+    <section id="sbs">
+        <div class="cs-container">
+            <!-- Left Image Section -->
+            <div class="cs-left">
+                <picture class="cs-picture cs-picture1">
+                    <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="cabinets" loading="lazy" width="400" height="563">
+                </picture>
+                <picture class="cs-picture cs-picture2">
+                    <source media="(max-width: 600px)" srcset="/assets/images/construction-m.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/construction.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/construction.jpg" alt="house" loading="lazy" width="400" height="563">
+                </picture>
+            </div>
+            <!-- Right Content Section-->
+            <div class="cs-right">
+                <span class="cs-topper">About Us</span>
+                <h2 class="cs-title">About Company Title</h2>
+                <p class="cs-text">
+                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
+                </p>
+                <p class="cs-text">
+                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
+                </p>
+                <div class="cs-flex-group">
+                    <p class="cs-flex-p">
+                        In consequat tincidunt turpis sit amet imperdiet. Praesent Classei consequat tincidunt turpis sit amet imperdiet for mind.
+                    </p>
+                    <span class="cs-name">Justin Time</span>
+                    <span class="cs-job">CEO-Founder</span>
+                    <img 
+                    class="cs-quote-icon"
+                    loading="lazy"
+                    decoding="async"
+                    src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg"
+                    alt="gavel"
+                    width="136"
+                    height="77"/>
+                </div>
+                <a href="/about" class="cs-button-solid">More About Us</a>
+            </div>
         </div>
-      </li>
-      <li class="cs-item">
-        <picture class="cs-picture">
-          <!--Mobile Image-->
-          <source media="(max-width: 600px)" srcset="{% getUrl
-          "/assets/images/yoga-11.jpg" | resize({ width: 580 , height: 640 }) |
-          avif %}" type="image/avif"> <source media="(max-width: 600px)"
-          srcset="{% getUrl "/assets/images/yoga-11.jpg" | resize({ width: 580 ,
-          height: 640 }) | webp %}" type="image/webp"> <source
-          media="(max-width: 600px)" srcset="{% getUrl
-          "/assets/images/yoga-11.jpg" | resize({ width: 580 , height: 640 }) |
-          jpeg %}" type="image/jpeg">
-          <!--Tablet Image-->
-          <source media="(max-width: 1024px)" srcset="{% getUrl
-          "/assets/images/yoga-11.jpg" | resize({ width: 628 , height: 824 }) |
-          avif %}" type="image/avif"> <source media="(max-width: 1024px)"
-          srcset="{% getUrl "/assets/images/yoga-11.jpg" | resize({ width: 628 ,
-          height: 824 }) | webp %}" type="image/webp"> <source
-          media="(max-width: 1024px)" srcset="{% getUrl
-          "/assets/images/yoga-11.jpg" | resize({ width: 628 , height: 824 }) |
-          jpeg %}" type="image/jpeg">
-          <!--Desktop Image-->
-          <source media="(min-width: 1024px)" srcset="{% getUrl
-          "/assets/images/yoga-11.jpg" | resize({ width: 530 , height: 824 }) |
-          avif %}" type="image/avif"> <source media="(min-width: 1024px)"
-          srcset="{% getUrl "/assets/images/yoga-11.jpg" | resize({ width: 530 ,
-          height: 824 }) | webp %}" type="image/webp"> <source
-          media="(min-width: 1024px)" srcset="{% getUrl
-          "/assets/images/yoga-11.jpg" | resize({ width: 530 , height: 824 }) |
-          jpeg %}" type="image/jpeg"> <img src="{% getUrl
-          "/assets/images/yoga-11.jpg" | resize({ width: 530 , height: 824 }) |
-          jpeg %}" alt="yoga-4" width="530" height="824" loading="lazy"
-          decoding="async" aria-hidden="true">
-        </picture>
-        <div class="cs-info">
-          <span class="cs-name">Lena</span>
-          <span class="cs-job">Hatha Yoga</span>
+    </section>
+
+    <!-- ============================================ -->
+    <!--            Extra Content To Rank             -->
+    <!-- ============================================ -->
+
+    <section id="sbs-r">
+        <div class="cs-container">
+            <!-- Left Image Section -->
+            <div class="cs-left">
+                <picture class="cs-picture cs-picture1">
+                    <source media="(max-width: 600px)" srcset="/assets/images/construction-m.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/construction.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/construction.jpg" alt="house" loading="lazy" width="400" height="560">
+                </picture>
+                <picture class="cs-picture cs-picture2">
+                    <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="cabinets" loading="lazy" width="400" height="560">
+                </picture>
+            </div>
+            <!-- Right Content Section-->
+            <div class="cs-right">
+                <span class="cs-topper">SEO Ranking</span>
+                <h2 class="cs-title">Talk about a main service keyword</h2>
+                <p class="cs-text">
+                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
+                </p>
+                <p class="cs-text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non tenetur, iure nihil ipsam qui atque commodi id voluptatem nesciunt, quis animi fuga cum doloribus! Eaque laboriosam, unde consectetur iure asperiores ullam. Consequuntur debitis a voluptatibus vitae optio autem explicabo quia neque est quas, in placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus modi laudantium voluptatibus rem libero error minus quia eligendi sapiente eos.
+                </p>
+                <a href="/blog" class="cs-button-solid">Read our Blog</a>
+            </div>
         </div>
-      </li>
-    </ul>
-  </div>
-</section>
+    </section>
 
-<!-- ============================================ -->
-<!--                   Pricing                    -->
-<!-- ============================================ -->
+    <!-- ============================================ -->
+    <!--                   Gallery                    -->
+    <!-- ============================================ -->
 
-<section id="pricing-701">
-  <div class="cs-container" id="preise">
-    <div class="cs-content">
-      <span class="cs-topper">Finde das Modell, das zu dir passt</span>
-      <h2 class="cs-title">Unsere Mitgliedschaften</h2>
-      <p class="cs-text">
-        Egal, ob du flexibel bleiben, regelmäßig praktizieren oder tief in deine
-        Yoga-Reise eintauchen möchtest – wir haben die passende Mitgliedschaft
-        für dich. Wähle das Modell, das deinem Lebensstil entspricht, und
-        genieße den Zugang zu unseren Kursen in einer warmen, unterstützenden
-        Community. Dein Wohlbefinden beginnt hier!
-      </p>
-    </div>
-    <ul class="cs-card-group">
-      <li class="cs-item">
-        <span class="cs-package">Soul Drop-in</span>
-        <span class="cs-price">18€</span>
-        <span class="cs-desc">pro Kurs</span>
-        <p class="cs-item-p">Flexibel bleiben</p>
-        <ul class="cs-ul">
-          <li class="cs-li">
-            Zugang zu allen regulären Kursen
-            <img
-              class="cs-icon"
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fcheck.svg"
-              alt="checkmark"
-              width="18"
-              height="18"
-            />
-          </li>
-          <li class="cs-li">
-            Einzelne Stunden buchbar
-            <img
-              class="cs-icon"
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fcheck.svg"
-              alt="checkmark"
-              width="18"
-              height="18"
-            />
-          </li>
-          <li class="cs-li">
-            Ideal für Gelegenheits-Yogis
-            <img
-              class="cs-icon"
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fcheck.svg"
-              alt="checkmark"
-              width="18"
-              height="18"
-            />
-          </li>
-          <li class="cs-li cs-disabled">
-            Ermäßigung auf Workshops
-            <img
-              class="cs-icon"
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fcheck.svg"
-              alt="checkmark"
-              width="18"
-              height="18"
-            />
-          </li>
-          <li class="cs-li cs-disabled">
-            kostenloser Zugang zu Online-Kursen
-            <img
-              class="cs-icon"
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fcheck.svg"
-              alt="checkmark"
-              width="18"
-              height="18"
-            />
-          </li>
-        </ul>
-        <a href="#kontakt" class="cs-button-solid cs-price-button"
-          >Jetzt buchen</a
-        >
-      </li>
-      <li class="cs-item cs-popular">
-        <span class="cs-package">Soul Flow</span>
-        <span class="cs-price">50€</span>
-        <span class="cs-desc">pro Monat</span>
-        <p class="cs-item-p">Regelmäßige Praxis</p>
-        <ul class="cs-ul">
-          <li class="cs-li">
-            Zugang zu allen regulären Kursen
-            <img
-              class="cs-icon"
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fcheck.svg"
-              alt="checkmark"
-              width="18"
-              height="18"
-            />
-          </li>
-          <li class="cs-li">
-            8 Kurse pro Monat inklusive
-            <img
-              class="cs-icon"
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fcheck.svg"
-              alt="checkmark"
-              width="18"
-              height="18"
-            />
-          </li>
-          <li class="cs-li">
-            Ideal für die regelmäßige Praxis
-            <img
-              class="cs-icon"
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fcheck.svg"
-              alt="checkmark"
-              width="18"
-              height="18"
-            />
-          </li>
-          <li class="cs-li">
-            Ermäßigung auf Workshops
-            <img
-              class="cs-icon"
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fcheck.svg"
-              alt="checkmark"
-              width="18"
-              height="18"
-            />
-          </li>
-          <li class="cs-li cs-disabled">
-            kostenloser Zugang zu Online-Kursen
-            <img
-              class="cs-icon"
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fcheck.svg"
-              alt="checkmark"
-              width="18"
-              height="18"
-            />
-          </li>
-        </ul>
-        <a href="#kontakt" class="cs-button-solid cs-price-button"
-          >Jetzt buchen</a
-        >
-      </li>
-      <li class="cs-item">
-        <span class="cs-package">Soul Unlimited</span>
-        <span class="cs-price">90€</span>
-        <span class="cs-desc">pro Monat</span>
-        <p class="cs-item-p">Tauche tief ein</p>
-        <ul class="cs-ul">
-          <li class="cs-li">
-            Zugang zu allen regulären Kursen
-            <img
-              class="cs-icon"
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fcheck.svg"
-              alt="checkmark"
-              width="18"
-              height="18"
-            />
-          </li>
-          <li class="cs-li">
-            Unbegrenzte Kursanzahl pro Monat
-            <img
-              class="cs-icon"
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fcheck.svg"
-              alt="checkmark"
-              width="18"
-              height="18"
-            />
-          </li>
-          <li class="cs-li">
-            Yoga im Studio und Zuhause
-            <img
-              class="cs-icon"
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fcheck.svg"
-              alt="checkmark"
-              width="18"
-              height="18"
-            />
-          </li>
-          <li class="cs-li">
-            kostenlose Teilnahme an exklusiven Events & Workshops
-            <img
-              class="cs-icon"
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fcheck.svg"
-              alt="checkmark"
-              width="18"
-              height="18"
-            />
-          </li>
-          <li class="cs-li">
-            Kostenloser Zugang zu Online-Kursen
-            <img
-              class="cs-icon"
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fcheck.svg"
-              alt="checkmark"
-              width="18"
-              height="18"
-            />
-          </li>
-        </ul>
-        <a href="#kontakt" class="cs-button-solid cs-price-button"
-          >Jetzt buchen</a
-        >
-      </li>
-    </ul>
-  </div>
-</section>
+    <section id="gallery">
+        <div class="cs-container">
+            <span class="cs-topper">Our Portfolio</span>
+            <h2 class="cs-title">Et orci volutpat, back up generator installations</h2>
+            <div class="cs-image-group">
+                <!-- Row 1-->
+                <div class="cs-row cs-row-1">
+                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+                    <picture class="cs-picture cs-picture1">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port1-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port1.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port1.jpg" alt="new hallway" loading="lazy" width="400" height="560">
+                    </picture>
+                    <picture class="cs-picture cs-picture2">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port4-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port4.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port4.jpg" alt="new home construction" loading="lazy" width="400" height="560">
+                    </picture>
+                    <picture class="cs-picture cs-picture3">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port7-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port7.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port7.jpg" alt="building a new wall" loading="lazy" width="400" height="560">
+                    </picture>
+                </div>
+                <!-- Row 2 -->
+                <div class="cs-row cs-row-2">
+                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+                    <picture class="cs-picture cs-picture1">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port2-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port2.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port2.jpg" alt="new kitchen" loading="lazy" width="400" height="560">
+                    </picture>
+                    <picture class="cs-picture cs-picture2">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port5-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port5.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port5.jpg" alt="apartment addition" loading="lazy" width="400" height="560">
+                    </picture>
+                    <picture class="cs-picture cs-picture3">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port8-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port8.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port8.jpg" alt="kew kitchen cabinets" loading="lazy" width="400" height="560">
+                    </picture>
+                </div>
+                <!-- Row 3 -->
+                <div class="cs-row cs-row-3">
+                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+                    <picture class="cs-picture cs-picture1">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port3-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port3.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port3.jpg" alt="new kitchen" loading="lazy" width="400" height="560">
+                    </picture>
+                    <picture class="cs-picture cs-picture2">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port6-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port6.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port6.jpg" alt="apartment addition" loading="lazy" width="400" height="560">
+                    </picture>
+                    <picture class="cs-picture cs-picture3">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port9-m.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port9.jpg">
+                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port9.jpg" alt="kew kitchen cabinets" loading="lazy" width="400" height="560">
+                    </picture>
 
-<!-- ============================================ -->
-<!--                     FAQ                      -->
-<!-- ============================================ -->
+                </div>
+            </div>
+            <a href="/projects" class="cs-button-solid">View Full Gallery</a>
+        </div>
+    </section>
 
-<section id="faq-1263">
-  <div class="cs-container" id="faq">
-    <div class="cs-content">
-      <span class="cs-topper">FAQ</span>
-      <h2 class="cs-title">Häufig gestellte Fragen</h2>
-    </div>
-    <ul class="cs-faq-group">
-      <!-- Active class added as default -->
-      <li class="cs-faq-item active">
-        <button class="cs-button">
-          <span class="cs-button-text">
-            Muss ich Vorkenntnisse haben, um teilzunehmen?
-          </span>
-        </button>
-        <p class="cs-item-p">
-          Nein! Unsere Kurse sind für alle Level offen. Unsere Lehrer:innen
-          helfen dir, eine Praxis zu finden, die zu dir passt.
-        </p>
-      </li>
-      <li class="cs-faq-item">
-        <button class="cs-button">
-          <span class="cs-button-text"> Welche Kleidung brauche ich? </span>
-        </button>
-        <p class="cs-item-p">
-          Bequeme Kleidung, in der du dich wohlfühlst. Falls du keine eigene
-          Matte hast, kannst du eine bei uns ausleihen.
-        </p>
-      </li>
-      <li class="cs-faq-item">
-        <button class="cs-button">
-          <span class="cs-button-text"> Wie kann ich mich anmelden? </span>
-        </button>
-        <p class="cs-item-p">
-          Du kannst dich ganz einfach online oder vor Ort anmelden. Schau in
-          unseren Stundenplan und reserviere deinen Platz.
-        </p>
-      </li>
-      <li class="cs-faq-item">
-        <button class="cs-button">
-          <span class="cs-button-text">
-            Gibt es auch Einzelstunden oder Privatunterricht?
-          </span>
-        </button>
-        <p class="cs-item-p">
-          Ja! Wir bieten private Sessions für Yoga, Meditation und Breathwork
-          an. Schreib uns einfach für mehr Infos.
-        </p>
-      </li>
-      <li class="cs-faq-item">
-        <button class="cs-button">
-          <span class="cs-button-text">
-            Kann ich eine Probestunde machen?
-          </span>
-        </button>
-        <p class="cs-item-p">
-          Ja! Deine erste Stunde bei uns ist immer kostenlos – komm einfach
-          vorbei und probier's aus. Wir freuen uns auf dich!
-        </p>
-      </li>
-    </ul>
-  </div>
-</section>
+    <!-- ============================================ -->
+    <!--                   Reviews                    -->
+    <!-- ============================================ -->
 
-<script>
-  const faqItems = Array.from(document.querySelectorAll(".cs-faq-item"));
-  for (const item of faqItems) {
-    const onClick = () => {
-      item.classList.toggle("active");
-    };
-    item.addEventListener("click", onClick);
-  }
-</script>
+    <section id="reviews">
+        <div class="cs-container">
+            <span class="cs-topper">Our Reviews</span>
+            <h2 class="cs-title">Words From Our Customers</h2>
+            <p class="cs-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit dolor volutpat porttitor sagittis nunc nisl. Sagittis sit pellentesque gravida viverra. Leo ut sed euismod tortor risus et. Ornare non neque, leo, ornare. Lorem ipsum dolor sit amet.
+            </p>
+            <ul class="cs-card-group">
+                <!-- Review 1 -->
+                <li class="cs-item">
+                    <img
+                    class="cs-item-img"
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile5.png"
+                    alt="profile picture"
+                    width="80"
+                    height="80"/>
+                    <p class="cs-item-p">
+                        Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor habitasse nam sed tempor. Viverra magna pharetra rhoncus, nec sed ullamcorper lectus et. Auctor velit diam fermentum consequat. Feugiat viverra massa urna, volutpat orci imperdiet eget eget.
+                    </p>
+                    <span class="cs-reviewer">
+                        Jon Doe
+                        <span class="cs-desc">Homeowner</span>
+                    </span>
+                    <img
+                    class="cs-item-stars"
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
+                    alt="stars"
+                    width="96"
+                    height="16"/>
+                </li>
+                <!-- Review 2 -->
+                <li class="cs-item">
+                    <img
+                    class="cs-item-img"
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile-4.png"
+                    alt="profile picture"
+                    width="80"
+                    height="80"/>
+                    <p class="cs-item-p">
+                        Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor habitasse nam sed tempor. Viverra magna pharetra rhoncus, nec sed ullamcorper lectus et. Auctor velit diam fermentum consequat. Feugiat viverra massa urna, volutpat orci imperdiet eget eget.
+                    </p>
+                    <span class="cs-reviewer">
+                        Jane Doe
+                        <span class="cs-desc">Homeowner</span>
+                    </span>
+                    <img
+                    class="cs-item-stars"
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
+                    alt="stars"
+                    width="96"
+                    height="16"/>
+                </li>
+            </ul>
+            <a aria-label="read more reviews" href="/reviews" class="cs-button-solid">Our Reviews</a>
+        </div>
+    </section>
 
-{% include 'components/cta.html' %} {%endblock%}
+    {% include 'components/cta.html' %}
+{% endblock %}
