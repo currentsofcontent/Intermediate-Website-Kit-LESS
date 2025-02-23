@@ -1,7 +1,7 @@
 ---
-title: "FemCircle Stuttgart"
-description: "Der FemCircle Stuttgart bietet dir einen geschützten und vertrauensvollen Raum in einer weiblichen Gemeinschaft. Hier kommen Frauen mit unterschiedlichen Hintergründen und Lebensentwürfen zusammen, um sich auf Augenhöhe zu begegnen und einander zu stärken.  "
-preloadImg: "/assets/images/logo.jpg"
+title: "Pixel Perfect Websites | Code Stitch Web Designs | Denver, CO"
+description: "Meta description for the page"
+preloadImg: "/assets/images/landing.jpg"
 permalink: "/"
 tags: "sitemap" # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
 eleventyNavigation:
@@ -70,202 +70,464 @@ eleventyNavigation:
 {% endblock %} {% block body %}
 
 <!-- ============================================ -->
-<!--                   Hero                       -->
+<!--                    Hero                      -->
 <!-- ============================================ -->
 
-<section id="hero-408">
+<section id="hero">
   <div class="cs-container">
-    <div class="cs-content">
-      <h2 class="cs-title">
-        <span class="cs-color"
-          >Herzlich Willkommen beim FemCircle Stuttgart –</span
-        >
-        schön, dass du hier bist!
-      </h2>
+    <div class="cs-flex-group">
+      <span class="cs-topper">mountain hiking society</span>
+      <h1 class="cs-title">Explore the World with Exciting People</h1>
       <p class="cs-text">
-        Der FemCircle Stuttgart bietet dir einen geschützten und
-        vertrauensvollen Raum in einer weiblichen Gemeinschaft. Hier kommen
-        Frauen mit unterschiedlichen Hintergründen und Lebensentwürfen zusammen,
-        um sich auf Augenhöhe zu begegnen und einander zu stärken.
+        Tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius.
+        Nibh tortor id aliquet lectus proin nibh condimentum.
       </p>
-      <p class="cs-text">
-        Unser Kreis steht symbolisch für Ganzheit und die Stärke der weiblichen
-        Identität. Es geht um Austausch, Balance zwischen Körper, Geist und
-        Seele sowie darum, in Verbundenheit gemeinsam Veränderungen zu bewirken.
-        Hier findest du einen sicheren Ort, um deine Meinungen, Erfahrungen und
-        Visionen zu teilen – ganz gleichwertig und frei.
-      </p>
-      <a href="#kontakt" class="cs-button-solid">Erfahre hier mehr</a>
+      <a href="/about" class="cs-button-solid">Explore More</a>
+      <a href="/contact" class="cs-button-transparent">
+        <img
+          class="cs-img"
+          loading="lazy"
+          decoding="async"
+          src="https://csimg.nyc3.digitaloceanspaces.com/Hero/play.svg"
+          alt="play icon"
+          width="17"
+          height="17"
+        />
+        Get in Touch
+      </a>
     </div>
-    <div class="cs-stat-group">
-      <picture class="cs-background">
-        <!--Mobile Image-->
-        <source media="(max-width: 600px)" srcset="{% getUrl
-        "/assets/images/fem.png" | resize({ width: 608 , height: 654 }) | avif
-        %}" type="image/avif"> <source media="(max-width: 600px)" srcset="{%
-        getUrl "/assets/images/fem.png" | resize({ width: 608 , height: 654 }) |
-        webp %}" type="image/webp"> <source media="(max-width: 600px)"
-        srcset="{% getUrl "/assets/images/fem.png" | resize({ width: 608 ,
-        height: 654 }) | jpeg %}" type="image/jpeg">
-        <!--Tablet Image-->
-        <source media="(max-width: 1024px)" srcset="{% getUrl
-        "/assets/images/fem.png" | resize({ width: 906 , height: 978 }) | avif
-        %}" type="image/avif"> <source media="(max-width: 1024px)" srcset="{%
-        getUrl "/assets/images/fem.png" | resize({ width: 906 , height: 978 }) |
-        webp %}" type="image/webp"> <source media="(max-width: 1024px)"
-        srcset="{% getUrl "/assets/images/fem.png" | resize({ width: 906 ,
-        height: 978 }) | jpeg %}" type="image/jpeg">
-        <!--Desktop Image-->
-        <source media="(min-width: 1024px)" srcset="{% getUrl
-        "/assets/images/fem.png" | resize({ width: 1382 , height: 1474 }) | avif
-        %}" type="image/avif"> <source media="(min-width: 1024px)" srcset="{%
-        getUrl "/assets/images/fem.png" | resize({ width: 1382 , height: 1474 })
-        | webp %}" type="image/webp"> <source media="(min-width: 1024px)"
-        srcset="{% getUrl "/assets/images/fem.png" | resize({ width: 1382 ,
-        height: 1474 }) | jpeg %}" type="image/jpeg"> <img src="{% getUrl
-        "/assets/images/fem.png" | resize({ width: 1382 , height: 1474 }) | jpeg
-        %}" alt="" width="1382" height="1474" loading="lazy" decoding="async"
-        aria-hidden="true">
+  </div>
+
+  <!-- Background Image -->
+  <picture class="cs-picture">
+    <source media="(max-width: 600px)" srcset="/assets/images/landing-m.webp" />
+    <source media="(min-width: 601px)" srcset="/assets/images/landing.jpg" />
+    <img
+      aria-hidden="true"
+      decoding="async"
+      src="/assets/images/landing.jpg"
+      alt="new home"
+      width="2500"
+      height="1667"
+      loading="eager"
+    />
+  </picture>
+</section>
+
+<!-- ============================================ -->
+<!--                  Services                    -->
+<!-- ============================================ -->
+
+<section id="services" class="services">
+  <!-- Get Icons From flaticon.com -->
+  <div class="card">
+    <picture>
+      <img
+        aria-hidden="true"
+        decoding="async"
+        src="/assets/svgs/service1.svg"
+        alt="appliance"
+        width="48"
+        height="48"
+      />
+    </picture>
+    <h2>Service 1</h2>
+    <p>
+      Talk about the service with keywords people will be searching for it by.
+      Keep it 1-2 sentences.
+    </p>
+  </div>
+  <div class="card">
+    <picture>
+      <img
+        aria-hidden="true"
+        decoding="async"
+        src="/assets/svgs/service2.svg"
+        alt="appliance"
+        width="48"
+        height="48"
+      />
+    </picture>
+    <h2>Service 2</h2>
+    <p>
+      Talk about the service with keywords people will be searching for it by.
+      Keep it 1-2 sentences.
+    </p>
+  </div>
+  <div class="card">
+    <picture>
+      <img
+        aria-hidden="true"
+        decoding="async"
+        src="/assets/svgs/service3.svg"
+        alt="appliance"
+        width="48"
+        height="48"
+      />
+    </picture>
+    <h2>Service 3</h2>
+    <p>
+      Talk about the service with keywords people will be searching for it by.
+      Keep it 1-2 sentences.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--                 Side By Side                 -->
+<!-- ============================================ -->
+
+<section id="sbs">
+  <div class="cs-container">
+    <!-- Left Image Section -->
+    <div class="cs-left">
+      <picture class="cs-picture cs-picture1">
+        <source
+          media="(max-width: 600px)"
+          srcset="/assets/images/cabinets2-m.jpg"
+        />
+        <source
+          media="(min-width: 601px)"
+          srcset="/assets/images/cabinets2.jpg"
+        />
+        <img
+          aria-hidden="true"
+          decoding="async"
+          src="/assets/images/cabinets2.jpg"
+          alt="cabinets"
+          loading="lazy"
+          width="400"
+          height="563"
+        />
+      </picture>
+      <picture class="cs-picture cs-picture2">
+        <source
+          media="(max-width: 600px)"
+          srcset="/assets/images/construction-m.jpg"
+        />
+        <source
+          media="(min-width: 601px)"
+          srcset="/assets/images/construction.jpg"
+        />
+        <img
+          aria-hidden="true"
+          decoding="async"
+          src="/assets/images/construction.jpg"
+          alt="house"
+          loading="lazy"
+          width="400"
+          height="563"
+        />
       </picture>
     </div>
+    <!-- Right Content Section-->
+    <div class="cs-right">
+      <span class="cs-topper">About Us</span>
+      <h2 class="cs-title">About Company Title</h2>
+      <p class="cs-text">
+        In consequat tincidunt turpis sit amet imperdiet. Praesent Class
+        officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur
+        et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent
+        nonatourean olei aptent taciti sociosqu ad litora torquent per.
+      </p>
+      <p class="cs-text">
+        In consequat tincidunt turpis sit amet imperdiet. Praesent Class
+        officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur
+        et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent
+        nonatourean olei aptent taciti sociosqu ad litora torquent per.
+      </p>
+      <div class="cs-flex-group">
+        <p class="cs-flex-p">
+          In consequat tincidunt turpis sit amet imperdiet. Praesent Classei
+          consequat tincidunt turpis sit amet imperdiet for mind.
+        </p>
+        <span class="cs-name">Justin Time</span>
+        <span class="cs-job">CEO-Founder</span>
+        <img
+          class="cs-quote-icon"
+          loading="lazy"
+          decoding="async"
+          src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg"
+          alt="gavel"
+          width="136"
+          height="77"
+        />
+      </div>
+      <a href="/about" class="cs-button-solid">More About Us</a>
+    </div>
   </div>
 </section>
 
 <!-- ============================================ -->
-<!--                Meet The Team                 -->
+<!--            Extra Content To Rank             -->
 <!-- ============================================ -->
 
-<section id="meet-team-860">
-  <div class="cs-container" id="team">
-    <div class="cs-content">
-      <div class="cs-flex">
-        <span class="cs-topper">Unser Expertinnen Team</span>
-        <h2 class="cs-title">Wer steckt hinter FemCircle Stuttgart?</h2>
-        <p class="cs-text">
-          Wir sind
-          <a href="https://susannestenglein.de" target="_blank"
-            >Susanne Stenglein</a
-          >
-          und
-          <a
-            href="https://www.persoenlichkeitscoaching-stuttgart.de"
-            target="_blank"
-            >Kathrin Flörl-Korb,</a
-          >
-          feministische Coachinnen® und die Gründerinnen des FemCircle
-          Stuttgart. Mit jahrelanger Erfahrung in Persönlichkeitsentwicklung,
-          körperorientierter Arbeit und der Begleitung von Frauen bieten wir dir
-          diesen besonderen Raum an. Unsere Praxisgemeinschaft im Stuttgarter
-          Westen ist ein Ort, an dem Female Empowerment auf kraft- & liebevolle
-          Weise gelebt wird. Uns verbindet nicht nur unsere Arbeit, sondern
-          Freundschaft, Schwesternschaft und Lebenserfahrung.
-        </p>
+<section id="sbs-r">
+  <div class="cs-container">
+    <!-- Left Image Section -->
+    <div class="cs-left">
+      <picture class="cs-picture cs-picture1">
+        <source
+          media="(max-width: 600px)"
+          srcset="/assets/images/construction-m.jpg"
+        />
+        <source
+          media="(min-width: 601px)"
+          srcset="/assets/images/construction.jpg"
+        />
+        <img
+          aria-hidden="true"
+          decoding="async"
+          src="/assets/images/construction.jpg"
+          alt="house"
+          loading="lazy"
+          width="400"
+          height="560"
+        />
+      </picture>
+      <picture class="cs-picture cs-picture2">
+        <source
+          media="(max-width: 600px)"
+          srcset="/assets/images/cabinets2-m.jpg"
+        />
+        <source
+          media="(min-width: 601px)"
+          srcset="/assets/images/cabinets2.jpg"
+        />
+        <img
+          aria-hidden="true"
+          decoding="async"
+          src="/assets/images/cabinets2.jpg"
+          alt="cabinets"
+          loading="lazy"
+          width="400"
+          height="560"
+        />
+      </picture>
+    </div>
+    <!-- Right Content Section-->
+    <div class="cs-right">
+      <span class="cs-topper">SEO Ranking</span>
+      <h2 class="cs-title">Talk about a main service keyword</h2>
+      <p class="cs-text">
+        In consequat tincidunt turpis sit amet imperdiet. Praesent Class
+        officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur
+        et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent
+        nonatourean olei aptent taciti sociosqu ad litora torquent per.
+      </p>
+      <p class="cs-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non tenetur,
+        iure nihil ipsam qui atque commodi id voluptatem nesciunt, quis animi
+        fuga cum doloribus! Eaque laboriosam, unde consectetur iure asperiores
+        ullam. Consequuntur debitis a voluptatibus vitae optio autem explicabo
+        quia neque est quas, in placeat. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Doloribus modi laudantium voluptatibus rem libero
+        error minus quia eligendi sapiente eos.
+      </p>
+      <a href="/blog" class="cs-button-solid">Read our Blog</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Gallery                    -->
+<!-- ============================================ -->
+
+<section id="gallery">
+  <div class="cs-container">
+    <span class="cs-topper">Our Portfolio</span>
+    <h2 class="cs-title">Et orci volutpat, back up generator installations</h2>
+    <div class="cs-image-group">
+      <!-- Row 1-->
+      <div class="cs-row cs-row-1">
+        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+        <picture class="cs-picture cs-picture1">
+          <source
+            media="(max-width: 600px)"
+            srcset="/assets/images/portfolio/port1-m.jpg"
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="/assets/images/portfolio/port1.jpg"
+          />
+          <img
+            aria-hidden="true"
+            decoding="async"
+            src="/assets/images/portfolio/port1.jpg"
+            alt="new hallway"
+            loading="lazy"
+            width="400"
+            height="560"
+          />
+        </picture>
+        <picture class="cs-picture cs-picture2">
+          <source
+            media="(max-width: 600px)"
+            srcset="/assets/images/portfolio/port4-m.jpg"
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="/assets/images/portfolio/port4.jpg"
+          />
+          <img
+            aria-hidden="true"
+            decoding="async"
+            src="/assets/images/portfolio/port4.jpg"
+            alt="new home construction"
+            loading="lazy"
+            width="400"
+            height="560"
+          />
+        </picture>
+        <picture class="cs-picture cs-picture3">
+          <source
+            media="(max-width: 600px)"
+            srcset="/assets/images/portfolio/port7-m.jpg"
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="/assets/images/portfolio/port7.jpg"
+          />
+          <img
+            aria-hidden="true"
+            decoding="async"
+            src="/assets/images/portfolio/port7.jpg"
+            alt="building a new wall"
+            loading="lazy"
+            width="400"
+            height="560"
+          />
+        </picture>
+      </div>
+      <!-- Row 2 -->
+      <div class="cs-row cs-row-2">
+        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+        <picture class="cs-picture cs-picture1">
+          <source
+            media="(max-width: 600px)"
+            srcset="/assets/images/portfolio/port2-m.jpg"
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="/assets/images/portfolio/port2.jpg"
+          />
+          <img
+            aria-hidden="true"
+            decoding="async"
+            src="/assets/images/portfolio/port2.jpg"
+            alt="new kitchen"
+            loading="lazy"
+            width="400"
+            height="560"
+          />
+        </picture>
+        <picture class="cs-picture cs-picture2">
+          <source
+            media="(max-width: 600px)"
+            srcset="/assets/images/portfolio/port5-m.jpg"
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="/assets/images/portfolio/port5.jpg"
+          />
+          <img
+            aria-hidden="true"
+            decoding="async"
+            src="/assets/images/portfolio/port5.jpg"
+            alt="apartment addition"
+            loading="lazy"
+            width="400"
+            height="560"
+          />
+        </picture>
+        <picture class="cs-picture cs-picture3">
+          <source
+            media="(max-width: 600px)"
+            srcset="/assets/images/portfolio/port8-m.jpg"
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="/assets/images/portfolio/port8.jpg"
+          />
+          <img
+            aria-hidden="true"
+            decoding="async"
+            src="/assets/images/portfolio/port8.jpg"
+            alt="kew kitchen cabinets"
+            loading="lazy"
+            width="400"
+            height="560"
+          />
+        </picture>
+      </div>
+      <!-- Row 3 -->
+      <div class="cs-row cs-row-3">
+        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+        <picture class="cs-picture cs-picture1">
+          <source
+            media="(max-width: 600px)"
+            srcset="/assets/images/portfolio/port3-m.jpg"
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="/assets/images/portfolio/port3.jpg"
+          />
+          <img
+            aria-hidden="true"
+            decoding="async"
+            src="/assets/images/portfolio/port3.jpg"
+            alt="new kitchen"
+            loading="lazy"
+            width="400"
+            height="560"
+          />
+        </picture>
+        <picture class="cs-picture cs-picture2">
+          <source
+            media="(max-width: 600px)"
+            srcset="/assets/images/portfolio/port6-m.jpg"
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="/assets/images/portfolio/port6.jpg"
+          />
+          <img
+            aria-hidden="true"
+            decoding="async"
+            src="/assets/images/portfolio/port6.jpg"
+            alt="apartment addition"
+            loading="lazy"
+            width="400"
+            height="560"
+          />
+        </picture>
+        <picture class="cs-picture cs-picture3">
+          <source
+            media="(max-width: 600px)"
+            srcset="/assets/images/portfolio/port9-m.jpg"
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="/assets/images/portfolio/port9.jpg"
+          />
+          <img
+            aria-hidden="true"
+            decoding="async"
+            src="/assets/images/portfolio/port9.jpg"
+            alt="kew kitchen cabinets"
+            loading="lazy"
+            width="400"
+            height="560"
+          />
+        </picture>
       </div>
     </div>
-    <ul class="cs-card-group">
-      <li class="cs-item">
-        <picture class="cs-picture">
-          <!--Mobile Image-->
-          <source media="(max-width: 600px)" srcset="{% getUrl
-          "/assets/images/portrait_susi.jpeg" | resize({ width: 576 , height:
-          714 }) | avif({ quality: 90 }) %}" type="image/avif"> <source
-          media="(max-width: 600px)" srcset="{% getUrl
-          "/assets/images/portrait_susi.jpeg" | resize({ width: 576 , height:
-          714 }) | webp({ quality: 90 }) %}" type="image/webp"> <source
-          media="(max-width: 600px)" srcset="{% getUrl
-          "/assets/images/portrait_susi.jpeg" | resize({ width: 576 , height:
-          714 }) | jpeg({ quality: 90 }) %}" type="image/jpeg">
-          <!--Tablet Image-->
-          <source media="(max-width: 1024px)" srcset="{% getUrl
-          "/assets/images/portrait_susi.jpeg" | resize({ width: 1100 , height:
-          814 }) | avif({ quality: 90 }) %}" type="image/avif"> <source
-          media="(max-width: 1024px)" srcset="{% getUrl
-          "/assets/images/portrait_susi.jpeg" | resize({ width: 1100 , height:
-          814 }) | webp({ quality: 90 }) %}" type="image/webp"> <source
-          media="(max-width: 1024px)" srcset="{% getUrl
-          "/assets/images/portrait_susi.jpeg" | resize({ width: 1100 , height:
-          814 }) | jpeg({ quality: 90 }) %}" type="image/jpeg">
-          <!--Desktop Image-->
-          <source media="(min-width: 1024px)" srcset="{% getUrl
-          "/assets/images/portrait_susi.jpeg" | resize({ width: 610 , height:
-          814 }) | avif({ quality: 90 }) %}" type="image/avif"> <source
-          media="(min-width: 1024px)" srcset="{% getUrl
-          "/assets/images/portrait_susi.jpeg" | resize({ width: 610 , height:
-          814 }) | webp({ quality: 90 }) %}" type="image/webp"> <source
-          media="(min-width: 1024px)" srcset="{% getUrl
-          "/assets/images/portrait_susi.jpeg" | resize({ width: 610 , height:
-          814 }) | jpeg({ quality: 90 }) %}" type="image/jpeg"> <img src="{%
-          getUrl "/assets/images/portrait_susi.jpeg" | resize({ width: 610 ,
-          height: 814 }) | jpeg({ quality: 90 }) %}" alt="portrait" width="610"
-          height="814" loading="lazy" decoding="async" aria-hidden="true">
-        </picture>
-        <div class="cs-info">
-          <span class="cs-name">Susanne Stenglein</span>
-          <span class="cs-job"
-            >Psychologin M.Sc. & Systemische Coachin, Yogalehrerin</span
-          >
-          <a
-            href="https://susannestenglein.de/ueber-mich/"
-            class="cs-button-solid"
-            target="_blank"
-            >Mehr über Susanne</a
-          >
-        </div>
-      </li>
-      <li class="cs-item">
-        <picture class="cs-picture">
-          <!--Mobile Image-->
-          <source media="(max-width: 600px)" srcset="{% getUrl
-          "/assets/images/portrait-kathrin.jpg" | resize({ width: 576 , height:
-          714, fit: fill, position: center}) | avif({ quality: 90 }) %}"
-          type="image/avif"> <source media="(max-width: 600px)" srcset="{%
-          getUrl "/assets/images/portrait-kathrin.jpg" | resize({ width: 576 ,
-          height: 714, fit: fill, position: center}) | webp({ quality: 90 }) %}"
-          type="image/webp"> <source media="(max-width: 600px)" srcset="{%
-          getUrl "/assets/images/portrait-kathrin.jpg" | resize({ width: 576 ,
-          height: 714, fit: fill, position: center}) | jpeg({ quality: 90 }) %}"
-          type="image/jpeg">
-          <!--Tablet Image-->
-          <source media="(max-width: 1024px)" srcset="{% getUrl
-          "/assets/images/portrait-kathrin.jpg" | resize({ width: 1100 , height:
-          814 }) | avif({ quality: 90 }) %}" type="image/avif"> <source
-          media="(max-width: 1024px)" srcset="{% getUrl
-          "/assets/images/portrait-kathrin.jpg" | resize({ width: 1100 , height:
-          814 }) | webp({ quality: 90 }) %}" type="image/webp"> <source
-          media="(max-width: 1024px)" srcset="{% getUrl
-          "/assets/images/portrait-kathrin.jpg" | resize({ width: 1100 , height:
-          814 }) | jpeg({ quality: 90 }) %}" type="image/jpeg">
-          <!--Desktop Image-->
-          <source media="(min-width: 1024px)" srcset="{% getUrl
-          "/assets/images/portrait-kathrin.jpg" | resize({ width: 610 , height:
-          814 }) | avif({ quality: 90 }) %}" type="image/avif"> <source
-          media="(min-width: 1024px)" srcset="{% getUrl
-          "/assets/images/portrait-kathrin.jpg" | resize({ width: 610 , height:
-          814 }) | webp({ quality: 90 }) %}" type="image/webp"> <source
-          media="(min-width: 1024px)" srcset="{% getUrl
-          "/assets/images/portrait-kathrin.jpg" | resize({ width: 610 , height:
-          814 }) | jpeg({ quality: 90 }) %}" type="image/jpeg"> <img src="{%
-          getUrl "/assets/images/portrait-kathrin.jpg" | resize({ width: 610 ,
-          height: 814 }) | jpeg({ quality: 90 }) %}" alt="portrait" width="610"
-          height="814" loading="lazy" decoding="async" aria-hidden="true">
-        </picture>
-        <div class="cs-info">
-          <span class="cs-name">Kathrin Flörl-Korb</span>
-          <span class="cs-job">Coachin für Persönlichkeitsentwicklung</span>
-          <a
-            href="https://www.persoenlichkeitscoaching-stuttgart.de/ueber-mich/"
-            class="cs-button-solid"
-            target="_blank"
-            >Mehr über Kathrin</a
-          >
-        </div>
-      </li>
-    </ul>
+    <a href="/projects" class="cs-button-solid">View Full Gallery</a>
   </div>
 </section>
 
 <!-- ============================================ -->
-<!--                    FAQ                       -->
+<!--                   Reviews                    -->
 <!-- ============================================ -->
 
 <section id="faq-254">
@@ -406,7 +668,7 @@ eleventyNavigation:
         <li class="cs-faq-item">
           <button class="cs-button">Kosten</button>
           <p class="cs-item-p">
-            EUR 395,00 - Sollte die Summe für dich schwer aufzubringen sein,
+            EUR 495,00 - Sollte die Summe für dich schwer aufzubringen sein,
             sprich uns an – wir finden eine Lösung!
           </p>
         </li>
@@ -452,34 +714,4 @@ eleventyNavigation:
   </div>
 </section>
 
-<!-- ============================================ -->
-<!--                  Content                     -->
-<!-- ============================================ -->
-
-<section id="content-1450">
-  <div class="cs-container">
-    <div class="cs-content">
-      <span class="cs-topper">Wir freuen uns auf dich!</span>
-      <h2 class="cs-title">
-        Wir freuen uns darauf, dich im FemCircle Stuttgart willkommen zu heißen
-        und gemeinsam mit dir an deiner persönlichen Entfaltung zu arbeiten!
-      </h2>
-      <h2 class="cs-title">Deine Susanne & Kathrin</h2>
-      <a href="mailto:hello@femcircle.de" class="cs-button-solid"
-        >Sichere dir jetzt deinen Platz!</a
-      >
-    </div>
-  </div>
-</section>
-
-<script>
-  const faqItems = Array.from(document.querySelectorAll(".cs-faq-item"));
-  for (const item of faqItems) {
-    const onClick = () => {
-      item.classList.toggle("active");
-    };
-    item.addEventListener("click", onClick);
-  }
-</script>
-
-{% endblock%}
+{% include 'components/cta.html' %} {% endblock %}
